@@ -1,0 +1,282 @@
+// app global css in SCSS form
+@import url('https://fonts.googleapis.com/css?family=Asap:400,500,700&display=swap');
+
+@media (max-width: $breakpoint-xs-max) {
+	.desk-nav-items {
+		display: none !important;
+	}
+
+	.mob-nav-items {
+		display: block !important;
+	}
+
+	.app-name {
+		font-size: 10px !important;
+	}
+
+	.admin-login {
+		width: 90% !important;
+	}
+
+	.product_main_name {
+		font-size: 12px !important;
+	}
+}
+
+@media (max-width: $breakpoint-sm-max) {
+	.desk-nav-items {
+		display: none !important;
+	}
+
+	.mob-nav-items {
+		display: block !important;
+	}
+
+	.app-name {
+		font-size: 10px !important;
+	}
+
+	.admin-login {
+		width: 90% !important;
+	}
+
+	.product_main_name {
+		font-size: 12px !important;
+	}
+}
+
+@media (max-width: $breakpoint-md-max) {
+
+	.product_main_name {
+		font-size: 12px !important;
+	}
+
+	.mob-nav-items {
+		display: none !important;
+	}
+
+	.admin-login {
+		width: 25%;
+	}
+}
+
+@media (max-width: $breakpoint-lg-max) {
+	.mob-nav-items {
+		display: none !important;
+	}
+
+	.product_main_name {
+		font-size: 16px;
+	}
+
+	.admin-login {
+		width: 25%;
+	}
+}
+
+@media (max-width: $breakpoint-lg-max) {
+	.mob-nav-items {
+		display: none !important;
+	}
+}
+
+@media (max-width: $breakpoint-xl-max) {
+	.mob-nav-items {
+		display: none !important;
+	} 
+}
+
+.page-q {
+	background: #F8F9FA;
+}
+
+.make-sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 10%;
+}
+
+.carosuel-main {
+	width: 100%;
+}
+
+.carosuel-title {
+	width: 100%;
+}
+
+.dashboard-img {
+	display: flex;
+	height: 200px
+}
+
+
+.product-title {
+	color: #fff;
+	background: rgba(0, 0, 0, 0.47);
+	cursor: pointer;
+	word-wrap: break-word;
+	white-space: pre-line;
+}
+
+.image-title {
+	color: #fff;
+	background: rgba(0, 0, 0, 0.47);
+	word-wrap: break-word;
+	white-space: pre-line;
+}
+
+.product-title:hover {
+	color: $primary;
+	background: rgba(0, 0, 0, 1.47);
+}
+
+.asap-font {
+	font-family: 'Asap', sans-serif;
+	font-weight: 500;
+}
+
+.w-100 {
+	width: 100%
+}
+
+.w-75 {
+	width: 75% !important
+}
+
+.w-50 {
+	width: 50% !important
+}
+
+.w-25 {
+	width: 25% !important
+}
+
+.w-40 {
+	width: 40% !important
+}
+
+
+.w-85 {
+	width: 85%
+}
+
+.carosuel-property-card {
+	width: 300px;
+	height: 150px;
+	margin-right: 20%;
+}
+
+.admin-main-card {
+	height: 350px;
+}
+
+.card-top-border {
+	border-top: $primary 5px solid;
+}
+
+
+.admin-login-bg {
+	background-image: url("/statics/road.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.services-card {
+	height: 250px;
+	position: relative;
+}
+
+.services-card .service-icon {
+	font-size: 100px;
+}
+
+.service-btn-1 {
+	display: none;
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.services-card-section {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.service-icon-top {
+	position: absolute;
+	top: -100%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	display: none;
+}
+
+.services-card:hover .service-btn-1 {
+	display: block;
+}
+
+.services-card:hover .service-icon {
+	display: none;
+}
+
+.services-card:hover .service-icon-top {
+	display: block;
+}
+
+@for $fw from 1 through 4 {
+	.fw-#{($fw*100)+300} {
+		font-weight: 300+($fw*100);
+	}
+}
+
+@for $mtt from 1 through 20 {
+	.mtt-#{($mtt*10)} {
+		margin-top: $mtt*10px;
+	}
+}
+
+@for $mrr from 1 through 20 {
+	.mrr-#{($mrr*10)} {
+		margin-right: $mrr*10px;
+	}
+}
+
+@for $mbb from 1 through 20 {
+	.mbb-#{($mbb*10)} {
+		margin-bottom: $mbb*10px;
+	}
+}
+
+@for $mll from 1 through 20 {
+	.mll-#{($mll*10)} {
+		margin-left: $mll*10px;
+	}
+}
+
+@for $ptt from 1 through 10 {
+	.ptt-#{($ptt*10)} {
+		padding-top: $ptt*10px;
+	}
+}
+
+@for $prr from 1 through 10 {
+	.prr-#{($prr*10)} {
+		padding-right: $prr*10px;
+	}
+}
+
+@for $pbb from 1 through 10 {
+	.pbb-#{($pbb*10)} {
+		padding-bottom: $pbb*10px;
+	}
+}
+
+@for $pll from 1 through 10 {
+	.pll-#{($pll*10)} {
+		padding-left: $pll*10px;
+	}
+}
