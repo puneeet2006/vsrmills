@@ -15,6 +15,7 @@
     "axios": "^0.18.1",
     "date-fns": "^2.8.1",
     "firebase": "^7.3.0",
+    "js-file-downloader": "^1.1.5",
     "quasar": "^1.0.0",
     "v-img": "^0.2.0",
     "vue-backtotop": "^1.6.1",

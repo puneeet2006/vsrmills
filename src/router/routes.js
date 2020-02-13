@@ -43,6 +43,17 @@ const routes = [
   }]
 },
 {
+  path: '/videolibrary',
+
+  component: () => import('layouts/MyLayout.vue'),
+  children: [
+  {
+    path: '',
+    name: 'videolibrary',
+    component: () => import('pages/VideoLibrary.vue')
+  }]
+},
+{
   path: '/products',
 
   component: () => import('layouts/MyLayout.vue'),
@@ -82,6 +93,16 @@ const routes = [
     path: '',
     name: 'Dashboard',
     component: () => import('pages/Dashboard.vue')
+  }]
+},
+{
+  path: '/admin/video',
+  component: () => import('layouts/AdminAuth.vue'),
+  children: [
+  {
+    path: '',
+    name: 'AdminVideo',
+    component: () => import('components/Admin/AddVideoToLibrary.vue')
   }]
 },
 {

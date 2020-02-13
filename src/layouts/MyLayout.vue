@@ -6,6 +6,7 @@
           <q-btn stretch class="app-name" flat size="0.9em" :label="appName" to="/" />
         </q-toolbar-title>
         <q-btn class='desk-nav-items' stretch flat v-for="(item,index) in navbaritems" :key="index" :label="item.label" :to="item.to" />
+        <q-btn color="primary" label="Download Profile" :loading="loading" @click="downloadFile()" />
         <q-btn class='mob-nav-items' icon="fas fa-bars">
           <q-menu transition-show="flip-right" transition-hide="flip-left">
             <q-list style="min-width: 100px">
@@ -31,7 +32,13 @@
   </q-layout>
 </template>
 <script>
-import BackToTop from 'vue-backtotop'
+import BackToTop from 'vue-backtotop';
+import Downloader from 'js-file-downloader';
+import
+{
+  firebaseImageStorage
+}
+from 'boot/firebase'
 export default
 {
   components:
@@ -46,6 +53,7 @@ export default
   {
     return {
       appName: null,
+      loading: false,
       navbaritems: [
         {
           label: 'Home',
@@ -57,7 +65,11 @@ export default
           to: '/products',
           icon: ''
         },
-
+        {
+          label: 'Production Videos',
+          to: '/videolibrary',
+          icon: ''
+        },
         {
           label: 'About',
           to: '/about',
@@ -71,6 +83,31 @@ export default
 
 
       ]
+    }
+  },
+  methods:
+  {
+    async downloadFile()
+    {
+      this.loading = true;
+      let docRef = firebaseImageStorage.ref().child('file/vsrprofile.pdf');
+
+
+      await docRef.getDownloadURL().then(function(url)
+      {
+        new Downloader(
+        {
+          url: url
+        })
+
+      }).catch(function(error)
+      {
+        console.log(error)
+
+      });
+
+      this.loading = false;
+
     }
   }
 };
